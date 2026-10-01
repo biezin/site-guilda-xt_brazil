@@ -1,0 +1,1531 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="XT Brazil - Sensibilidade VIP, treinos, acompanhamento e X1 no Free Fire.">
+
+    <meta name="theme-color" content="#00aaff">
+
+    <title>Sensis XT Brazil</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #05070a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(5, 7, 10, 0.88);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(0, 170, 255, 0.15);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            min-height: 75px;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #00aaff;
+        }
+
+        .menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .menu a {
+            color: #bbb;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #00aaff;
+        }
+
+        /* =========================
+           WHATSAPP TOPO
+        ========================== */
+
+        .whatsapp-top {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            padding: 11px 17px;
+
+            border-radius: 8px;
+
+            background: #25d366;
+            color: #061b0d;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            transition: 0.3s;
+
+            box-shadow: 0 0 18px rgba(37, 211, 102, 0.20);
+        }
+
+        .whatsapp-top:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 25px rgba(37, 211, 102, 0.45);
+        }
+
+        /* =========================
+           HAMBURGER
+        ========================== */
+
+        .menu-button {
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            border: none;
+            background: transparent;
+
+            position: relative;
+
+            cursor: pointer;
+
+            z-index: 1200;
+        }
+
+        .menu-button span {
+            position: absolute;
+
+            left: 8px;
+
+            width: 26px;
+            height: 2px;
+
+            background: #ffffff;
+
+            border-radius: 10px;
+
+            transition:
+                transform 0.35s ease,
+                top 0.35s ease,
+                opacity 0.25s ease,
+                background 0.3s ease;
+        }
+
+        .menu-button span:nth-child(1) {
+            top: 12px;
+        }
+
+        .menu-button span:nth-child(2) {
+            top: 20px;
+        }
+
+        .menu-button span:nth-child(3) {
+            top: 28px;
+        }
+
+        /* Hamburger -> X */
+
+        .menu-button.active span:nth-child(1) {
+            top: 20px;
+            transform: rotate(45deg);
+            background: #00aaff;
+        }
+
+        .menu-button.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .menu-button.active span:nth-child(3) {
+            top: 20px;
+            transform: rotate(-45deg);
+            background: #00aaff;
+        }
+
+        /* =========================
+           MENU LATERAL
+        ========================== */
+
+        .mobile-menu-overlay {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.65);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 0.35s ease,
+                visibility 0.35s ease;
+
+            z-index: 1090;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: fixed;
+
+            top: 0;
+            right: 0;
+
+            width: min(85vw, 360px);
+            height: 100vh;
+
+            padding: 95px 25px 30px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(0, 170, 255, 0.15),
+                    transparent 30%
+                ),
+                #080b10;
+
+            border-left: 1px solid rgba(0, 170, 255, 0.22);
+
+            box-shadow:
+                -20px 0 60px rgba(0, 0, 0, 0.5);
+
+            transform: translateX(100%);
+
+            transition:
+                transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+
+            z-index: 1100;
+
+            overflow-y: auto;
+            touch-action: pan-y;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-title {
+            margin-bottom: 25px;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            color: #666;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-nav a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            padding: 17px 15px;
+
+            color: #ddd;
+
+            border-radius: 10px;
+
+            border: 1px solid transparent;
+
+            background: rgba(255, 255, 255, 0.02);
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a:active {
+            transform: translateX(5px);
+
+            color: #00aaff;
+
+            background: rgba(0, 170, 255, 0.07);
+
+            border-color: rgba(0, 170, 255, 0.18);
+        }
+
+        .mobile-nav-icon {
+            width: 35px;
+            height: 35px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 8px;
+
+            background: rgba(0, 170, 255, 0.08);
+
+            font-size: 17px;
+        }
+
+        .mobile-whatsapp {
+            margin-top: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            background: #25d366;
+            color: #061b0d;
+
+            font-weight: 900;
+
+            box-shadow:
+                0 0 20px rgba(37, 211, 102, 0.18);
+        }
+
+        .mobile-creator {
+            margin-top: 30px;
+            padding-top: 25px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+            color: #777;
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .mobile-creator strong {
+            color: #ffffff;
+        }
+
+        .mobile-creator a {
+            color: #00aaff;
+            font-weight: bold;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 120px 20px 80px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(0, 170, 255, 0.15),
+                    transparent 40%
+                ),
+                #05070a;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 82px);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0.95;
+        }
+
+        .hero h1 span {
+            color: #00aaff;
+
+            text-shadow:
+                0 0 25px rgba(0, 170, 255, 0.6);
+        }
+
+        .hero p {
+            margin-top: 25px;
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 15px 28px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #00aaff;
+            color: #000;
+
+            box-shadow:
+                0 0 25px rgba(0, 170, 255, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 35px rgba(0, 170, 255, 0.6);
+        }
+
+        .btn-secondary {
+            border: 1px solid #00aaff;
+            color: #00aaff;
+        }
+
+        .btn-secondary:hover {
+            background: #00aaff;
+            color: #000;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: #00aaff;
+        }
+
+        .section-title p {
+            color: #888;
+        }
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services {
+            background: #080b10;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            display: block;
+
+            background: #0d1118;
+
+            border: 1px solid rgba(0, 170, 255, 0.12);
+
+            padding: 30px;
+
+            border-radius: 14px;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+
+            border-color: #00aaff;
+
+            box-shadow:
+                0 0 25px rgba(0, 170, 255, 0.12);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #888;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* =========================
+           X1
+        ========================== */
+
+        .x1 {
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255, 50, 50, 0.10),
+                    transparent 45%
+                ),
+                #05070a;
+        }
+
+        .x1-box {
+            max-width: 900px;
+            margin: auto;
+
+            padding: 50px;
+
+            border-radius: 20px;
+
+            background: #0d1118;
+
+            border: 1px solid rgba(255, 50, 50, 0.3);
+
+            text-align: center;
+        }
+
+        .x1-box h3 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .x1-box h3 span {
+            color: #ff3030;
+        }
+
+        .x1-box p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .x1-price {
+            font-size: 34px;
+            font-weight: 900;
+            margin: 25px 0;
+        }
+
+        .x1-price span {
+            color: #ff3030;
+        }
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+            background: #080b10;
+        }
+
+        .stats-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+
+            text-align: center;
+        }
+
+        .stat {
+            padding: 35px;
+
+            background: #0d1118;
+
+            border-radius: 14px;
+        }
+
+        .stat h3 {
+            font-size: 38px;
+            color: #00aaff;
+        }
+
+        .stat p {
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #030405;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.05);
+
+            padding: 40px 20px;
+
+            text-align: center;
+        }
+
+        footer .footer-title {
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-title span {
+            color: #00aaff;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .creator {
+            margin-top: 12px;
+        }
+
+        .creator a {
+            color: #00aaff;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .creator a:hover {
+            color: #66d4ff;
+            text-shadow: 0 0 12px rgba(0, 170, 255, 0.5);
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .menu {
+                gap: 15px;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                min-height: 70px;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .whatsapp-top {
+                margin-left: auto;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .x1-box {
+                padding: 30px 20px;
+            }
+
+            .x1-box h3 {
+                font-size: 32px;
+            }
+
+            .whatsapp-top {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+        }
+
+        @media (max-width: 430px) {
+
+            .navbar {
+                padding: 0 14px;
+                gap: 10px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .whatsapp-top {
+                font-size: 11px;
+                padding: 9px 10px;
+            }
+
+            .menu-button {
+                width: 38px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#inicio" class="logo">
+                XT <span>BRAZIL</span>
+            </a>
+
+
+            <!-- MENU DESKTOP -->
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#inicio">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#servicos">
+                        Serviços
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#x1">
+                        X1
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#resultados">
+                        Resultados
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20XT%20Brazil%20%F0%9F%94%A5%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os."
+                class="whatsapp-top"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                💬 WhatsApp
+            </a>
+
+
+            <!-- HAMBURGER -->
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MENU MOBILE
+    ========================== -->
+
+    <div
+        class="mobile-menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <aside
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+
+        <div class="mobile-menu-title">
+            NAVEGAÇÃO
+        </div>
+
+
+        <nav class="mobile-nav">
+
+            <a href="#inicio" class="mobile-link">
+
+                <span class="mobile-nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Início
+                </span>
+
+            </a>
+
+
+            <a href="#servicos" class="mobile-link">
+
+                <span class="mobile-nav-icon">
+                    🎯
+                </span>
+
+                <span>
+                    Serviços
+                </span>
+
+            </a>
+
+
+            <a href="#x1" class="mobile-link">
+
+                <span class="mobile-nav-icon">
+                    ⚔️
+                </span>
+
+                <span>
+                    X1
+                </span>
+
+            </a>
+
+
+            <a href="#resultados" class="mobile-link">
+
+                <span class="mobile-nav-icon">
+                    📊
+                </span>
+
+                <span>
+                    Resultados
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <a
+            href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20XT%20Brazil%20%F0%9F%94%A5%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os."
+            class="mobile-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            💬 Falar no WhatsApp
+        </a>
+
+
+        <div class="mobile-creator">
+
+            <div>
+                Site criado por
+                <strong>
+                    Gabriel
+                </strong>
+            </div>
+
+            <div>
+                Instagram:
+                <a
+                    href="https://instagram.com/gabriel_nmls"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    @gabriel_nmls
+                </a>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="hero-content">
+
+                <h1>
+                    DOMINE O<br>
+                    <span>FREE FIRE</span>
+                </h1>
+
+                <p>
+                    Sensibilidade VIP, treinos personalizados,
+                    acompanhamento e desafios X1 para você evoluir
+                    dentro do Free Fire.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#servicos"
+                        class="btn btn-primary"
+                    >
+                        VER SERVIÇOS
+                    </a>
+
+
+                    <a
+                        href="#x1"
+                        class="btn btn-secondary"
+                    >
+                        DESAFIAR NO X1
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVIÇOS
+        ========================== -->
+
+        <section
+            class="services"
+            id="servicos"
+        >
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        NOSSOS <span>SERVIÇOS</span>
+                    </h2>
+
+                    <p>
+                        Clique em um serviço para falar diretamente
+                        comigo pelo WhatsApp.
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+                    <!-- SENSI VIP -->
+
+                    <a
+                        class="card"
+                        href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Sensi%20VIP%20da%20XT%20Brazil%20%F0%9F%8E%AF.%20Gostaria%20de%20saber%20como%20funciona%20e%20o%20valor."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <div class="card-icon">
+                            🎯
+                        </div>
+
+                        <h3>
+                            Sensi VIP
+                        </h3>
+
+                        <p>
+                            Configurações de sensibilidade
+                            desenvolvidas para melhorar sua
+                            precisão e controle.
+                        </p>
+
+                    </a>
+
+
+                    <!-- TREINO VIP -->
+
+                    <a
+                        class="card"
+                        href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Treino%20VIP%20da%20XT%20Brazil%20%F0%9F%94%A5.%20Gostaria%20de%20saber%20como%20funciona%20e%20o%20valor."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <div class="card-icon">
+                            🔥
+                        </div>
+
+                        <h3>
+                            Treino VIP
+                        </h3>
+
+                        <p>
+                            Treinos personalizados para melhorar
+                            sua mira, movimentação e desempenho.
+                        </p>
+
+                    </a>
+
+
+                    <!-- ACOMPANHAMENTO -->
+
+                    <a
+                        class="card"
+                        href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Acompanhamento%20da%20XT%20Brazil%20%F0%9F%93%88.%20Gostaria%20de%20saber%20como%20funciona%20e%20o%20valor."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <div class="card-icon">
+                            📈
+                        </div>
+
+                        <h3>
+                            Acompanhamento
+                        </h3>
+
+                        <p>
+                            Análise dos seus erros e acompanhamento
+                            para ajudar você a evoluir.
+                        </p>
+
+                    </a>
+
+
+                    <!-- X1 -->
+
+                    <a
+                        class="card"
+                        href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Quero%20desafiar%20o%20dono%20da%20XT%20Brazil%20no%20X1%20%E2%9A%94%EF%B8%8F.%20Gostaria%20de%20saber%20as%20regras%2C%20valor%20e%20hor%C3%A1rios%20dispon%C3%ADveis."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <div class="card-icon">
+                            ⚔️
+                        </div>
+
+                        <h3>
+                            X1
+                        </h3>
+
+                        <p>
+                            Desafie o dono da XT Brazil em uma
+                            partida X1 e prove sua habilidade.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             X1
+        ========================== -->
+
+        <section
+            class="x1"
+            id="x1"
+        >
+
+            <div class="container">
+
+                <div class="x1-box">
+
+                    <h3>
+                        <span>DESAFIE</span> O DONO
+                    </h3>
+
+                    <p>
+                        Você acha que consegue vencer?
+                        Entre em um X1 diretamente contra o dono
+                        da XT Brazil.
+                    </p>
+
+                    <p>
+                        Caso você vença o desafio,
+                        receberá
+                        <strong>
+                            treino + acompanhamento gratuitamente
+                        </strong>,
+                        sem custo adicional.
+                    </p>
+
+                    <div class="x1-price">
+                        X1 por <span>50% OFF</span>
+                    </div>
+
+                    <a
+                        href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Quero%20desafiar%20o%20dono%20da%20XT%20Brazil%20no%20X1%20%E2%9A%94%EF%B8%8F.%20Gostaria%20de%20saber%20as%20regras%2C%20valor%20e%20hor%C3%A1rios%20dispon%C3%ADveis."
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        QUERO DESAFIAR
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESULTADOS
+        ========================== -->
+
+        <section
+            class="stats"
+            id="resultados"
+        >
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        NOSSA <span>COMUNIDADE</span>
+                    </h2>
+
+                    <p>
+                        Alguns números da XT Brazil.
+                    </p>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat">
+
+                        <h3>
+                            0
+                        </h3>
+
+                        <p>
+                            Jogadores treinados
+                        </p>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <h3>
+                            0
+                        </h3>
+
+                        <p>
+                            X1 realizados
+                        </p>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <h3>
+                            0
+                        </h3>
+
+                        <p>
+                            Vitórias
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-title">
+            XT <span>BRAZIL</span>
+        </div>
+
+        <p>
+            Sensibilidade VIP • Treinos • Acompanhamento • X1
+        </p>
+
+        <p class="creator">
+            Criado por
+            <a
+                href="https://instagram.com/gabriel_nmls"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                @gabriel_nmls
+            </a>
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const menuButton = document.getElementById("menuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuOverlay = document.getElementById("menuOverlay");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        let touchStartX = 0;
+        let touchCurrentX = 0;
+        let isDragging = false;
+
+
+        /* =========================
+           ABRIR / FECHAR MENU
+        ========================== */
+
+        function openMenu() {
+
+            mobileMenu.classList.add("active");
+            menuOverlay.classList.add("active");
+
+            menuButton.classList.add("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        function closeMenu() {
+
+            mobileMenu.classList.remove("active");
+            menuOverlay.classList.remove("active");
+
+            menuButton.classList.remove("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileMenu.style.transform = "";
+
+            document.body.style.overflow = "";
+        }
+
+
+        menuButton.addEventListener(
+            "click",
+            () => {
+
+                const isOpen =
+                    mobileMenu.classList.contains("active");
+
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+
+            }
+        );
+
+
+        /* =========================
+           FUNDO ESCURO
+        ========================== */
+
+        menuOverlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+
+        /* =========================
+           LINKS FECHAM MENU
+        ========================== */
+
+        mobileLinks.forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
+
+            }
+        );
+
+
+        /* =========================
+           ESC FECHA MENU
+        ========================== */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape" &&
+                    mobileMenu.classList.contains("active")
+                ) {
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           ARRASTAR MENU PELO CELULAR
+        ========================== */
+
+        mobileMenu.addEventListener(
+            "touchstart",
+            event => {
+
+                touchStartX =
+                    event.touches[0].clientX;
+
+                touchCurrentX =
+                    touchStartX;
+
+                isDragging = true;
+
+                mobileMenu.style.transition = "none";
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        mobileMenu.addEventListener(
+            "touchmove",
+            event => {
+
+                if (!isDragging) {
+                    return;
+                }
+
+                touchCurrentX =
+                    event.touches[0].clientX;
+
+                const distance =
+                    touchCurrentX - touchStartX;
+
+
+                if (distance > 0) {
+
+                    mobileMenu.style.transform =
+                        `translateX(${distance}px)`;
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        mobileMenu.addEventListener(
+            "touchend",
+            () => {
+
+                if (!isDragging) {
+                    return;
+                }
+
+                isDragging = false;
+
+                const distance =
+                    touchCurrentX - touchStartX;
+
+                mobileMenu.style.transition =
+                    "transform 0.4s cubic-bezier(0.77, 0, 0.175, 1)";
+
+
+                if (distance > 100) {
+
+                    closeMenu();
+
+                } else {
+
+                    mobileMenu.style.transform =
+                        "translateX(0)";
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           CORRIGE RESIZE
+        ========================== */
+
+        window.addEventListener(
+            "resize",
+            () => {
+
+                if (
+                    window.innerWidth > 700 &&
+                    mobileMenu.classList.contains("active")
+                ) {
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
+```
