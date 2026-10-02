@@ -1,0 +1,6 @@
+data/
+*.tmp
+.env
+.env.*
+!.env.example
+.vercel/

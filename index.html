@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="XT Brazil — loja gamer de sensibilidades, codiguins, produtos digitais, contas e desafios X1 de Free Fire." />
+  <meta name="theme-color" content="#07111f" />
+  <title>XT Brazil — Loja Gamer</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="site-noise"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header" id="topo">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="XT Brazil início">
+        <span class="brand-mark">XT</span>
+        <span class="brand-text"><strong>XT</strong> BRAZIL</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#loja">Loja</a>
+        <a href="#acompanhar">Acompanhar pedido</a>
+        <a href="#x1">X1</a>
+        <a href="#vender">Vender conta</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn cart-trigger" id="cartOpen" aria-label="Abrir carrinho">
+          <span>🛒</span>
+          <b id="cartCount">0</b>
+        </button>
+        <a class="whatsapp-btn nav-whatsapp" href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20XT%20Brazil%20%F0%9F%94%A5" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <button class="menu-btn" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-head">
+      <span>MENU</span>
+      <button class="icon-btn" id="menuClose" aria-label="Fechar menu">✕</button>
+    </div>
+    <nav>
+      <a href="#inicio" data-close-menu>🏠 Início</a>
+      <a href="#loja" data-close-menu>🛍️ Loja</a>
+      <a href="#acompanhar" data-close-menu>📦 Acompanhar pedido</a>
+      <a href="#x1" data-close-menu>⚔️ X1</a>
+      <a href="#vender" data-close-menu>💰 Vender conta</a>
+      <a href="#faq" data-close-menu>❓ FAQ</a>
+    </nav>
+    <a class="whatsapp-btn mobile-wa" href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20XT%20Brazil%20%F0%9F%94%A5" target="_blank" rel="noopener noreferrer">💬 Falar no WhatsApp</a>
+  </div>
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+  <main>
+    <section class="hero section-pad" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pulse-dot"></span> XT BRAZIL STORE</div>
+          <h1>DOMINE O <span>FREE FIRE</span><br />DO SEU JEITO.</h1>
+          <p class="hero-lead">Sensibilidades, produtos digitais, codiguins, ofertas, contas e desafios X1 em um único lugar.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#loja">🛍️ Explorar loja</a>
+            <a class="btn btn-ghost" href="#x1">⚔️ Ver X1</a>
+          </div>
+          <div class="hero-trust">
+            <span>⚡ Entrega digital</span>
+            <span>🔒 Atendimento direto</span>
+            <span>🎮 Foco em Free Fire</span>
+          </div>
+        </div>
+
+        <div class="hero-card reveal reveal-delay">
+          <div class="hero-card-glow"></div>
+          <div class="hero-card-top">
+            <span class="mini-badge">DESTAQUE</span>
+            <span class="live-dot">● ONLINE</span>
+          </div>
+          <div class="hero-card-logo">XT</div>
+          <div class="hero-card-title">LOJA GAMER</div>
+          <div class="hero-card-subtitle">Sensi • Codiguin • Contas • X1</div>
+          <div class="hero-card-price-row">
+            <span>A partir de</span>
+            <strong>R$ 5,00</strong>
+          </div>
+          <a href="#loja" class="btn btn-small btn-primary">Ver produtos</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="category-strip">
+      <div class="container category-grid">
+        <button class="category-chip active" data-filter="all">🔥 Tudo</button>
+        <button class="category-chip" data-filter="sensi">🎯 Sensibilidade</button>
+        <button class="category-chip" data-filter="codiguin">🎟️ Codiguins</button>
+        <button class="category-chip" data-filter="prime">👑 Loja Prime</button>
+        <button class="category-chip" data-filter="conta">👤 Contas</button>
+        <button class="category-chip" data-filter="kit">💎 Kits</button>
+      </div>
+    </section>
+
+    <section class="section-pad shop-section" id="loja">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">CATÁLOGO</span>
+            <h2>ESCOLHA SEU <span>PRODUTO</span></h2>
+            <p>Escolha seu próximo item e personalize a sensibilidade para o modelo do seu celular.</p>
+          </div>
+          <div class="shop-tools">
+            <label class="search-box">
+              <span>⌕</span>
+              <input id="searchInput" type="search" placeholder="Buscar produto..." aria-label="Buscar produto" />
+            </label>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <div>🛰️</div>
+          <h3>Nenhum produto encontrado</h3>
+          <p>Tente outra busca ou categoria.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad tracking-section" id="acompanhar">
+      <div class="container tracking-card reveal">
+        <div class="tracking-icon">📦</div>
+        <div class="tracking-copy"><span class="section-kicker">ACOMPANHAMENTO</span><h2>ACOMPANHE SEU <span>PEDIDO</span></h2><p>Informe o código do pedido e fale com nosso atendimento para consultar o status da entrega.</p></div>
+        <form class="tracking-form" id="trackingForm">
+          <label for="trackingCode">Código do pedido</label>
+          <div><input id="trackingCode" name="trackingCode" placeholder="Ex.: XT-1024" required maxlength="40" /><button class="btn btn-primary" type="submit">Consultar</button></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section-pad featured-section">
+      <div class="container">
+        <div class="promo-grid">
+          <article class="promo-card promo-blue reveal">
+            <span class="promo-icon">🎯</span>
+            <div>
+              <span class="section-kicker">SENSI VIP</span>
+              <h3>Quer jogar com uma configuração feita para você?</h3>
+              <p>Entre em contato e veja as opções de sensibilidade, HUD e treino.</p>
+            </div>
+            <a class="btn btn-small btn-ghost" href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Sensi%20VIP%20da%20XT%20Brazil%20%F0%9F%8E%AF" target="_blank" rel="noopener noreferrer">Falar com a XT</a>
+          </article>
+
+          <article class="promo-card promo-purple reveal reveal-delay">
+            <span class="promo-icon">💎</span>
+            <div>
+              <span class="section-kicker">KITS</span>
+              <h3>Combine produtos e economize.</h3>
+              <p>Kits podem juntar sensibilidade, treino, HUD e outros extras digitais.</p>
+            </div>
+            <a class="btn btn-small btn-purple" href="#loja">Ver kits</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad x1-section" id="x1">
+      <div class="container x1-grid">
+        <div class="x1-copy reveal">
+          <span class="section-kicker red">DESAFIO XT</span>
+          <h2>VOCÊ TEM CORAGEM DE <span>DESAFIAR?</span></h2>
+          <p>Entre em um X1 contra o dono da XT Brazil por <strong>R$ 40,00</strong>. Chame no WhatsApp para combinar regras e horário.</p>
+          <div class="x1-points">
+            <span>⚔️ Partida X1</span>
+            <span>💰 Valor: R$ 40,00</span>
+            <span>🎥 Pode gerar conteúdo</span>
+            <span>🏆 Recompensas conforme a oferta</span>
+          </div>
+          <a class="btn btn-danger" href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Quero%20desafiar%20a%20XT%20Brazil%20no%20X1%20por%20R%24%2040%2C00.%20Vamos%20combinar%20as%20regras%20e%20o%20hor%C3%A1rio%3F" target="_blank" rel="noopener noreferrer">Quero desafiar</a>
+        </div>
+        <div class="x1-terminal reveal reveal-delay">
+          <div class="terminal-head"><span></span><span></span><span></span><b>xt-battle.exe</b></div>
+          <div class="terminal-body">
+            <p><span class="code-green">[XT]</span> Procurando desafiante...</p>
+            <p><span class="code-yellow">[STATUS]</span> Arena disponível</p>
+            <p><span class="code-blue">[MODE]</span> X1</p>
+            <p><span class="code-red">[RISK]</span> Alto 👀</p>
+            <div class="terminal-divider"></div>
+            <p class="terminal-big">READY<span>?</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad sell-section" id="vender">
+      <div class="container sell-card reveal">
+        <div class="sell-icon">💰</div>
+        <div>
+          <span class="section-kicker">QUER VENDER?</span>
+          <h2>VENDA SUA <span>CONTA</span> PARA A XT</h2>
+          <p>Envie informações da conta, inventário, itens raros, prints e o valor desejado para análise. A negociação fica sujeita às regras aplicáveis da plataforma e à avaliação da loja.</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/5511934336326?text=Ol%C3%A1!%20Quero%20vender%20minha%20conta%20de%20Free%20Fire%20para%20a%20XT%20Brazil.%20Quero%20saber%20como%20enviar%20as%20informa%C3%A7%C3%B5es.%20%F0%9F%92%B0" target="_blank" rel="noopener noreferrer">Enviar conta</a>
+      </div>
+      <details class="account-manager reveal">
+        <summary>🔐 Acesso do proprietário ao estoque</summary>
+        <form id="adminLoginForm" class="admin-login-form">
+          <label for="adminPassword">Senha do proprietário</label>
+          <div><input id="adminPassword" name="password" type="password" autocomplete="current-password" required minlength="10" placeholder="Digite sua senha" /><button class="btn btn-primary" type="submit">Entrar</button></div>
+          <p id="adminLoginMessage" role="status"></p>
+        </form>
+        <div id="accountAdminContent" hidden>
+          <div class="account-admin-heading"><p>Você está autenticado. Cadastros ficam disponíveis para todos os visitantes.</p><button id="adminLogout" class="btn btn-small btn-ghost" type="button">Sair</button></div>
+          <form id="accountForm" class="account-form">
+            <label>Nome da conta<input name="name" required maxlength="60" placeholder="Ex.: Conta com 3 passes e 2 raras" /></label>
+            <label>Preço (R$)<input name="price" type="number" min="50" max="500" step="0.01" required placeholder="Ex.: 150,00" /></label>
+            <label class="account-form-wide">Descrição do inventário<textarea name="description" rows="3" maxlength="300" placeholder="Descreva itens e detalhes; não inclua senhas nem dados de acesso."></textarea></label>
+            <label class="account-form-wide">Imagem (link opcional)<input name="image" type="url" placeholder="https://..." /></label>
+            <label class="account-form-wide">Ou escolha uma imagem do computador<input name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" /></label>
+            <small class="account-upload-help">PNG, JPEG, WebP ou GIF • até 3 MB. Se escolher um arquivo, ele será usado no lugar do link.</small>
+            <button class="btn btn-primary" type="submit">Adicionar conta ao catálogo</button>
+          </form>
+          <div id="managedAccountList" class="managed-account-list"></div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section-pad stats-section">
+      <div class="container">
+        <div class="section-heading compact reveal">
+          <div>
+            <span class="section-kicker">XT BRAZIL</span>
+            <h2>UMA LOJA FEITA PARA <span>EVOLUIR</span></h2>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card reveal"><strong data-counter="0">0</strong><span>Jogadores treinados</span></div>
+          <div class="stat-card reveal reveal-delay"><strong data-counter="0">0</strong><span>X1 realizados</span></div>
+          <div class="stat-card reveal reveal-delay-2"><strong data-counter="0">0</strong><span>Pedidos entregues</span></div>
+          <div class="stat-card reveal reveal-delay-3"><strong data-counter="0">100</strong><span>Foco no atendimento</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad faq-section" id="faq">
+      <div class="container faq-grid">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">AJUDA</span>
+            <h2>PERGUNTAS <span>FREQUENTES</span></h2>
+            <p>Informações rápidas para quem está conhecendo a loja.</p>
+          </div>
+        </div>
+        <div class="faq-list reveal reveal-delay">
+          <details>
+            <summary>Como recebo um produto digital?</summary>
+            <p>Depois da confirmação do pagamento, a entrega é combinada conforme o produto e o canal de atendimento informado pela loja.</p>
+          </details>
+          <details>
+            <summary>Onde altero os preços e o estoque?</summary>
+            <p>Edite o arquivo <code>js/products.js</code>. Cada produto tem campos próprios para preço, estoque, imagem, categoria e descrição.</p>
+          </details>
+          <details>
+            <summary>Posso cadastrar contas na loja?</summary>
+            <p>Somente o proprietário, após entrar com a senha administrativa, consegue adicionar ou remover contas. Os itens da Loja Prime e demais produtos podem ser alterados em <code>js/products.js</code>.</p>
+          </details>
+          <details>
+            <summary>O site já recebe pagamento sozinho?</summary>
+            <p>Esta versão é o frontend. O botão de compra monta o pedido e envia para o WhatsApp. Para pagamento automático, será necessário integrar um gateway e um backend.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#inicio"><span class="brand-mark">XT</span><span class="brand-text"><strong>XT</strong> BRAZIL</span></a>
+        <p>Loja gamer • Sensibilidade • Codiguins • Contas • Kits • X1</p>
+      </div>
+      <div class="footer-links">
+        <a href="#loja">Loja</a>
+        <a href="#acompanhar">Acompanhar pedido</a>
+        <a href="#x1">X1</a>
+        <a href="#vender">Vender conta</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/gabriel_nmls" target="_blank" rel="noopener noreferrer">Instagram @gabriel_nmls</a>
+        <a href="https://wa.me/5511934336326" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 XT Brazil. Todos os direitos reservados.</span>
+      <span>Criado por Gabriel</span>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-head">
+      <div><span class="section-kicker">SEU PEDIDO</span><h3>CARRINHO</h3></div>
+      <button class="icon-btn" id="cartClose" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <div>🛒</div>
+      <p>Seu carrinho está vazio.</p>
+      <a class="btn btn-small btn-ghost" href="#loja" id="goToStore">Escolher produtos</a>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total-row"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <button class="btn btn-primary full-btn" id="checkoutBtn">Finalizar pelo WhatsApp</button>
+      <small>O pedido será enviado para o atendimento da XT Brazil.</small>
+    </div>
+  </aside>
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+
+  <dialog class="product-dialog" id="productDialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Fechar">✕</button>
+      <div class="dialog-grid">
+      <div class="dialog-image-wrap"><img id="dialogImage" src="" alt="" /></div>
+      <div class="dialog-info">
+        <span class="product-badge" id="dialogBadge">DESTAQUE</span>
+        <h3 id="dialogName"></h3>
+        <p id="dialogDescription"></p>
+        <div class="dialog-meta">
+          <span>Estoque: <strong id="dialogStock"></strong></span>
+          <span>Entrega: <strong>Digital</strong></span>
+        </div>
+        <div class="dialog-price" id="dialogPrice"></div>
+        <div class="device-fields" id="deviceFields" hidden>
+          <label for="deviceBrand">Seu dispositivo</label>
+          <select id="deviceBrand"><option value="">Selecione a marca</option><option>Apple iPhone</option><option>Samsung</option><option>Motorola</option><option>Xiaomi / Redmi / POCO</option><option>Outra marca</option></select>
+          <label for="deviceModel">Modelo do aparelho</label>
+          <select id="deviceModel" disabled><option value="">Selecione primeiro a marca</option></select>
+        </div>
+        <button class="btn btn-primary full-btn" id="dialogAdd">Adicionar ao carrinho</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
